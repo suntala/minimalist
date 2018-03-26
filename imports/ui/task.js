@@ -1,13 +1,13 @@
-import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { Template } from 'meteor/templating';
 
-import './task.html';
+import './task.html'; 
+
 
 Template.task.helpers({
     isOwner() {
         return Meteor.userId() === this.owner        
-    }
-
+    },
 })
 
 Template.task.events({
@@ -31,17 +31,5 @@ Template.task.events({
             const editedTask = $(event.target).val();
             Meteor.call('tasks.edit', this._id, editedTask)
         }
-
-
-
-        // const eventish = $(event.target).val();
-        // const thisish = $(this._id)
-        // alert('e: ' + eventish + 'this: ' + Object.keys(this))
-        // const editedTask = $(event.target).val();
-        // Meteor.call('tasks.edit', this._id, editedTask)
-        // alert('e: ' + eventish + 'this: ' + this.taskName)
-            //$(event.target).val() gives the name with changes, this.taskName gives old name
-
-    }
-
+    },
 })

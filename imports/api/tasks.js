@@ -1,10 +1,10 @@
-import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
+import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
 export const Tasks = new Mongo.Collection('tasks');
 
-if (Meteor.isServer) {
+if(Meteor.isServer) {
     Meteor.publish('tasks', function () {
         return Tasks.find({
             $or: [
@@ -82,5 +82,3 @@ Meteor.methods({
         Tasks.update(taskId, { $set: { taskName: info } })
     }
 });
-
-
