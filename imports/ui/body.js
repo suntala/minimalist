@@ -6,6 +6,10 @@ import { Tasks } from '../api/tasks.js';
 
 import './body.html';
 import './task.js';
+import './extra.js';
+// import './extra.html';
+import './layoutApp.html';
+
 
 
 Template.body.onCreated(function () {
@@ -24,6 +28,9 @@ Template.body.helpers({
     },
     incompleteCount() {
         return Tasks.find({ checked: { $ne: true } }).count();
+    },
+    totalCount() {
+        return Tasks.find({}).count();
     },
 })
 

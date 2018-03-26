@@ -1,7 +1,11 @@
 <body>
     <div class="container">
         <header>
-            <h1>mini ma list ({{incompleteCount}})</h1>
+            <h1>mini ma list
+            {{#if totalCount}}
+                ({{incompleteCount}} of {{totalCount}})
+            {{/if}}
+            </h1>
             <label class="hide-completed">
                 <input type="checkbox" /> Hide Completed Tasks
             </label>
