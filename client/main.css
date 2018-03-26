@@ -85,7 +85,7 @@ li {
     border-bottom: #eee solid 1px;
 }
 
-li .task {
+li .taskName {
     margin-left: 10px;
 }
 
@@ -93,7 +93,7 @@ li.checked {
     color: #888;
 }
 
-li.checked .task {
+li.checked .taskName {
     text-decoration: line-through;
 }
 
@@ -110,6 +110,40 @@ header .hide-completed {
     margin-left: 5px;
 }
 
+
+
+
+/*  */
+[name=taskContent]{
+    border: none;
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 300px;
+    padding: 1em 0.1em;
+}
+
+/* li:hover{
+    background-color: blue;
+} */
+
+.private [name=taskContent]{
+    background-color: #eee;
+}
+
+[name=taskContent]:hover{
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+[name=taskContent]:focus{
+    cursor:default;
+    outline:none;
+    background-color: #ddd;
+}
+/*  */
+
+
+
 @media (max-width: 600px) {
     li {
         padding: 12px 15px;
@@ -124,3 +158,4 @@ header .hide-completed {
         padding-bottom: 5px;
     }
 }
+

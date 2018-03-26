@@ -12,7 +12,13 @@
                 {{/if}}
             </button>
         {{/if}}
-        <span class="task"><strong>{{username}}</strong> - {{task}}</span>
+        <span class="taskName">
+            <!-- <strong>{{username}}</strong> - {{taskName}} -->
+            <strong>{{username}}</strong> - 
+            <input type="text" value="{{taskName}}" name="taskContent">
+        </span>
     </li>    
 </template>
+
+
 

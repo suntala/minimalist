@@ -28,15 +28,20 @@ Template.body.helpers({
 })
 
 Template.body.events({
-    'submit .new-task'(event) {
+    // 'submit .new-task'(event) {
+    'submit form'(event) {
         event.preventDefault();
 
-        const target = event.target;
-        const task = target.task.value;
+        // const target = event.target;
+        // const task = target.task.value;
 
-        Meteor.call('tasks.insert', task);
+        let name = $('[name="taskName"]').val();
 
-        target.task.value = '';
+        Meteor.call('tasks.insert', name);
+
+        // target.task.value = '';
+        // $('input').val('');
+        $('[name="taskName"]').val('');
     },
     'change .hide-completed input'(event, instance) {
         instance.state.set('hideCompleted', event.target.checked);
