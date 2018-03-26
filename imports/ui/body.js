@@ -32,11 +32,11 @@ Template.body.events({
         event.preventDefault();
 
         const target = event.target;
-        const text = target.text.value;
+        const task = target.task.value;
 
-        Meteor.call('tasks.insert', text);
+        Meteor.call('tasks.insert', task);
 
-        target.text.value = '';
+        target.task.value = '';
     },
     'change .hide-completed input'(event, instance) {
         instance.state.set('hideCompleted', event.target.checked);
